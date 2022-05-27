@@ -1,0 +1,7 @@
+{
+  "name": "GitUserManager",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
