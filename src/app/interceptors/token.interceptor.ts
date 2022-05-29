@@ -23,7 +23,7 @@ export class TokenInterceptor implements HttpInterceptor {
    */
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const token = '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';
+    const token = '';
 
     //Authentication by setting header with token value
     if (token) {
