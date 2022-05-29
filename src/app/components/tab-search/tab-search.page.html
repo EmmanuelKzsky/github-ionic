@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Users search
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Users search</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-searchbar
+    debounce="1500"
+    [(ngModel)]="inputKey"
+    (ionChange)="onInput($event)"
+    (ionClear)="onCancel($event)">
+  </ion-searchbar>
+  <ion-grid *ngIf="user">
+    <ion-row>
+      <ion-col>
+        <ion-avatar class="avatar-centered">
+          <img [src]="user.avatar_url" [alt]="user.login">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item  *ngIf="user">
+
+    <ion-label class="ion-text-wrap">
+      <b>Full Name: </b>{{user.name}}<br><br>
+      <b>Bio: </b>{{user.bio}}<br><br>
+      <b>Company: </b>{{user.company}}<br><br>
+      <b>Location: </b>{{user.location}}<br><br>
+      <b>Blog: </b><span (click)="openCompany(user.blog)">{{user.blog}}</span>
+    </ion-label>
+  </ion-item>
+</ion-content>
